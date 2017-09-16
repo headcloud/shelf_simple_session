@@ -162,7 +162,7 @@ abstract class SessionStore {
     var data = new List<int>(_KEY_LENGTH);
     for (int i = 0; i < _KEY_LENGTH; ++i) data[i] = _random.nextInt(256);
 
-    return CryptoUtils.bytesToHex(data);
+    return new Digest(data).toString();
   }
 
   // Delete a [session]
